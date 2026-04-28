@@ -12,25 +12,39 @@ Copy the prompt below, paste into your LLM, and add your task.
 
 ---
 
-Analyze this AI work task and give an executable workflow routing recommendation.
+Analyze an AI work task and produce an executable workflow routing strategy.
+
+Your goal is not to recommend a "single best model." Instead, judge:
+
+- Which phases warrant strong reasoning
+- Which phases can use cheaper execution
+- Which phases should prioritize deterministic verifiers
+- When to escalate, stop, or require human review
+- Whether this task is suitable for automation
 
 **Task:**
 
 [Paste task description here]
 
-**Optional context:** Cost sensitivity / Failure cost / Verification available / Tools available / Context size
+**Optional context:** Cost sensitivity / Failure cost / Verification available / Tools available / Context size / Involves code or data
 
-**Output:** Give a routing recommendation in 3–7 lines using this format:
+**First, complete this analysis internally (do not output):**
 
-- Intake:
-- Plan:
-- Search / Context:
-- Execute:
-- Verify:
-- Repair:
-- Package:
+- Task-structure profile: oracle strength / horizon / ambiguity / context dependency / output constraint / failure cost / reversibility / cost sensitivity
+- Workflow decomposition: intake / plan / search / execute / verify / repair / package — for each phase, its goal, recommended routing, reasoning level
+- Escalation triggers and stop / do-not-automate conditions
 
-Each line should state the model class, reasoning level, and what specifically happens. Model classes: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Do not use specific model names. When a deterministic verifier is available, use it before LLM judgment.
+**Then output only the Quick Routing block:**
+
+- Intake: [model class] · [reasoning level] · [one-line action]
+- Plan: ...
+- Search / Context: ...
+- Execute: ...
+- Verify: ...
+- Repair: ...
+- Package: ...
+
+Keep each line terse. Model classes: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Do not use specific model names. When a deterministic verifier is available, do not default to LLM judgment. When a task can be split into plan / execute / verify, do not hand it to a single model.
 
 ---
 
