@@ -8,7 +8,8 @@
 
 ---
 
-## GPT 输出
+<details>
+<summary>GPT 5.5 (Auto) 输出</summary>
 
 # AI Work Routing
 
@@ -153,9 +154,12 @@
 
 这份方案应该做到：拿着就能出发，不需要再重新思考。
 
+</details>
+
 ---
 
-## Claude 输出
+<details>
+<summary>Claude Haiku 4.5 输出</summary>
 
 # AI Work Routing
 
@@ -302,9 +306,12 @@
 
 出发前打印或截图，随身带着。
 
+</details>
+
 ---
 
-## Grok 输出
+<details>
+<summary>Grok 4.3 输出</summary>
 
 # AI Work Routing
 
@@ -379,3 +386,5 @@
 - 按天排好的行程文档（时间、地点、交通方式、预计花费、预订链接）
 - 住宿和交通预订清单（带价格、日期、取消政策）
 - 行李清单 + 日本实用 Tips + 应急联系与备用计划
+
+</details>
