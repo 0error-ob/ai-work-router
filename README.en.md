@@ -12,15 +12,15 @@ Copy the prompt below, paste into your LLM, and add your task.
 
 ---
 
-Analyze an AI work task and produce an AI work routing recommendation that a regular user can follow.
+Analyze an AI work task and produce an AI work routing recommendation that a regular user can follow step by step.
 
-Your goal is not to recommend a "single best model." Instead, judge:
+Your goal is not to recommend a "single best model." Instead, tell the user:
 
-- Which steps deserve a strong model thinking carefully
+- Which steps need careful planning
 - Which steps can be handed to a cheap/fast model
-- Which steps should use tools, tests, tables, or rules to check
+- Which steps should use tools, tables, tests, or rules to check
 - When to escalate to a stronger model
-- When automation should stop and let a human decide
+- When automation must stop and let a human decide
 
 ## Task
 
@@ -36,24 +36,31 @@ Your goal is not to recommend a "single best model." Instead, judge:
 - Involves code / data / files / external pages:
 - Current pain points:
 
-## Internal analysis (do this silently)
+## Internal analysis
 
-Complete the following analysis internally — do not output it as a list of jargon:
+Analyze the task structure internally, but do not output any jargon.
 
-- Task structure: verification difficulty, task length, ambiguity, context dependency, output constraint, failure cost, reversibility, cost sensitivity
-- Workflow decomposition: understand task → plan → search/gather → execute → check → fix → deliver
-- Which steps need strong reasoning, which can use cheap execution, which need deterministic checks
-- Escalation triggers and stop conditions
+Internal analysis covers:
+
+- Whether the task is easy to verify
+- Whether the task is single-step or multi-step
+- Whether the task is ambiguous
+- Whether it depends on a lot of context or real-time information
+- How costly mistakes are
+- How reversible mistakes are
+- Which steps can be checked by tools
+- Which steps need human judgment
 
 ## Output requirements
 
 Output only a concise **AI Work Routing**.
 
-Do not output the full analysis report.
+Do not output the internal analysis.
 Do not pile up jargon.
 Do not use specific model names.
 Do not say "best model."
-Each step must tell the user: what to do next, what kind of model/tool to use, why.
+Do not make the user feel this is a technical report.
+Each step must tell the user: what to do, what to use, why.
 
 ## Output format
 
@@ -61,11 +68,11 @@ Each step must tell the user: what to do next, what kind of model/tool to use, w
 
 ## One-line strategy
 
-State in one sentence how this task should split AI work.
+In one sentence a non-technical reader can follow, summarize how this task should be split across a strong model, a cheap model, tools, and humans.
 
 ## Recommended steps
 
-Output by step. Each step uses this format:
+Output 5–7 steps. Each step uses this format:
 
 ### 1. [Step name]
 
@@ -73,13 +80,13 @@ Output by step. Each step uses this format:
 One sentence describing what this stage accomplishes.
 
 **What to use:**
-Choose one or more from below, explained in natural language:
+Use natural language to describe which capability. Choose only from:
 
 - A strong model planning carefully
 - A cheap/fast model executing
 - A long-context model reading large material
-- A structured-output model organizing into a table / JSON / checklist
-- A tool / test / rule check
+- A structured-output model organizing into a table / checklist
+- A tool / table / test / rule check
 - Human judgment
 
 **Why:**
@@ -87,22 +94,37 @@ One sentence on why this allocation makes sense.
 
 ## Check points
 
-List the 3–5 most important things to check for this task.
-Prefer tools, tables, tests, rules, or calculation over asking another LLM to judge by feel.
+List 3–5 of the most important check points.
+Each must be specific and actionable.
+Prefer tools, tables, tests, rules, or calculation over asking another AI to judge by feel.
 
 ## When to escalate
 
 List specific escalation conditions.
-Examples: conflicting information, two consecutive failures, budget exceeded, tests failing, requirements becoming unclear, risk increasing.
+Do not write vague things like "escalate when things get complex."
+Write triggers the user can actually judge.
 
 ## When to stop automation
 
-List cases requiring human judgment.
-Examples: high-risk decisions, real payments, legal / visa / medical / financial risk, information that cannot be verified, unclear user preferences.
+List cases that must be handled by a human.
+Pay particular attention to real payments, production environments, legal / visa / medical / financial issues, security, privacy, irreversible actions, and unclear user preferences.
 
 ## Final deliverable
 
-State what form the final output should take so the user can use it directly.
+State what the final output should be so the user can use it directly.
+
+## Output style
+
+- Like work advice for a smart but non-technical user
+- Few abstract nouns
+- More action verbs
+- Keep each step short
+- Do not go beyond what the user needs to complete the task
+
+## Length limit
+
+Unless the task is genuinely complex, keep the total output between 700–1000 characters.
+Each step's "Why" should be at most one sentence.
 
 ---
 
