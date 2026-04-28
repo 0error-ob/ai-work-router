@@ -1,5 +1,5 @@
 # Examples
 
-- [coding-agent-plan-edit.md](coding-agent-plan-edit.md) — test-backed bug fix with repair loop
-- [batch-json-extraction.md](batch-json-extraction.md) — high-volume structured extraction
-- [model-migration-decision.md](model-migration-decision.md) — cohort-level migration decision
+Take the prompt from the README, add a real task, send to different LLMs, and compare output quality.
+
+- [japan-trip-7days.md](japan-trip-7days.md) — 7-day Japan trip on a budget: side-by-side outputs from GPT / Claude / Grok (Chinese)

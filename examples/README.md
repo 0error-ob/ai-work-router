@@ -1,5 +1,5 @@
 # 示例
 
-- [coding-agent-plan-edit.md](coding-agent-plan-edit.md) — 有测试覆盖的 bug 修复，含修复循环
-- [batch-json-extraction.md](batch-json-extraction.md) — 大批量结构化抽取
-- [model-migration-decision.md](model-migration-decision.md) — 基于 cohort 的模型迁移决策
+把 README 里的 prompt 加上具体任务，发给不同 LLM，对比看输出质量。
+
+- [japan-trip-7days.md](japan-trip-7days.md) — 7 天日本旅行（预算有限）：GPT / Claude / Grok 三个模型的实际输出对比

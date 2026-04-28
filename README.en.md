@@ -148,4 +148,4 @@ Intake → Planning → Search → Execute → Verify → Repair → Package
 
 ## More examples
 
-`examples/coding-agent-plan-edit.md` · `examples/batch-json-extraction.md` · `examples/model-migration-decision.md`
+[examples/japan-trip-7days.md](examples/japan-trip-7days.md) — 7-day Japan trip on a budget, three LLM outputs side by side (Chinese)

@@ -126,7 +126,7 @@
 
 ---
 
-想要工程师版（完整 9 节、术语、Agent Instruction）？→ [AI Work Routing Card](routing-card.md)
+想要专业版（完整 9 节、术语、Agent Instruction）？→ [AI Work Routing Card](routing-card.md)
 
 ## 举个例子
 
@@ -146,4 +146,4 @@
 
 ## 更多例子
 
-`examples/coding-agent-plan-edit.md` · `examples/batch-json-extraction.md` · `examples/model-migration-decision.md`
+[examples/japan-trip-7days.md](examples/japan-trip-7days.md) — 7 天日本旅行（预算有限），三个 LLM 输出对比
