@@ -24,39 +24,7 @@ Your goal is not to recommend a "single best model." Instead, determine:
 
 ## Output requirements
 
-Produce output in the following structure.
-
----
-
-# Quick Routing
-
-Give the most direct execution recommendation in 3–7 lines.
-
-Format:
-
-- Intake:
-- Plan:
-- Search / Context:
-- Execute:
-- Verify:
-- Repair:
-- Package:
-
-Each line must state:
-
-1. What model class or tool class to use
-2. Reasoning level
-3. What specifically happens in this phase
-
-Use these model classes — do not use specific model names:
-
-- Strong reasoning
-- Cheaper execution
-- Coding-capable model
-- Long-context model
-- Structured-output-stable model
-- Deterministic verifier
-- Human review
+Produce output following the 9-section structure below.
 
 ---
 
@@ -146,6 +114,16 @@ Output as a table:
 
 | Phase | Recommended model / tool class | Reasoning level | Specific action | Why |
 |---|---|---|---|---|
+
+Choose only from these model classes — do not use specific model names:
+
+- Strong reasoning
+- Cheaper execution
+- Coding-capable model
+- Long-context model
+- Structured-output-stable model
+- Deterministic verifier
+- Human review
 
 Notes:
 
