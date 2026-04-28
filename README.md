@@ -8,23 +8,13 @@ Markdown-only: a prompt, a template, and worked examples.
 
 ## How to use it
 
-### 1. Use the prompt
+Pick whichever fits:
 
-Copy `prompts/create-routing-card.md` into your preferred LLM and paste your task or workflow.
+**Use the prompt** — copy `prompts/create-routing-card.md` into your preferred LLM and paste your task. Fast first-pass.
 
-Fast first-pass routing card.
+**Use the template** — fill out `templates/ai-work-routing-card.md` yourself. Good when you want to think through oracle strength, ambiguity, and failure cost directly.
 
-### 2. Use the template
-
-Fill out `templates/ai-work-routing-card.md` manually.
-
-Think through oracle strength, ambiguity, failure cost, workflow phases, and escalation yourself.
-
-### 3. Ask for a card
-
-Send a task or workflow to someone familiar with the framework. Receive a completed AI Work Routing Card.
-
-Good for high-cost, ambiguous, agentic, or model-migration tasks.
+**Ask for a card** — send a task or workflow to someone familiar with the framework. Good for high-cost, ambiguous, or model-migration tasks.
 
 ## Example
 

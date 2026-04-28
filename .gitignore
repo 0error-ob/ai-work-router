@@ -1,5 +1,31 @@
-.DS_Store
 .env
-*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node
 node_modules/
+
+# Python
 __pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build / generated
+dist/
+build/
+*.log
+
+# Local-only files
+*.local.md
