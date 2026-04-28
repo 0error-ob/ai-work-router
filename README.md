@@ -6,6 +6,8 @@ Most routing asks: which model should handle this prompt?
 
 AI Work Router asks: where is intelligence actually needed in this workflow?
 
+The current version is Markdown-only: a prompt, a template, and worked examples.
+
 ## What this is
 
 A template and prompt system for producing AI Work Routing Cards.
@@ -26,6 +28,30 @@ It helps you decide:
 - not a provider router
 - not a cost optimizer
 - not a claim that any specific model is best
+
+## How to use it
+
+There are three ways to use AI Work Router v0.
+
+### 1. Use the prompt
+
+Copy `prompts/create-routing-card.md` into your preferred LLM and paste your task or workflow.
+
+Use this when you want a fast first-pass routing card.
+
+### 2. Use the template
+
+Fill out `templates/ai-work-routing-card.md` manually.
+
+Use this when you want to think through oracle strength, ambiguity, failure cost, workflow phases, verification, and escalation yourself.
+
+### 3. Ask for a card
+
+Send a concrete task, prompt, or workflow to someone familiar with the framework and ask them to produce a completed AI Work Routing Card.
+
+Use this when the task is high-cost, ambiguous, agentic, or tied to model migration.
+
+The output should not be a single model recommendation. It should be a workflow policy: where to use strong reasoning, where cheaper execution is safe, what verifier to use, and when to escalate or stop.
 
 ## One-minute example
 
