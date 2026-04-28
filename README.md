@@ -1,43 +1,47 @@
 [English](README.en.md)
 
-# AI Work Router
+# 给你的任务分个级
 
-这个工作流里，哪些地方真正需要智能？
+还在傻傻用一个模型跑所有步骤？
 
-按工作流阶段路由，而不是按 prompt 路由。决定哪里用强推理，哪里用更便宜的执行，用什么验证器，以及何时停止。
+聪明的做法是分步看：这一步是要最聪明的模型来死磕，还是便宜点的跑跑就行？要不要先验证一下？什么时候该停手？
 
-纯 Markdown：一个 prompt、一个模板、几个示例。
+这个 repo 就三个东西：一段话（复制给 LLM）、一个填空模板、几个例子。
 
-## 如何使用
+## 怎么用
 
-选一种适合的方式：
+挑个顺手的方式：
 
-**用 prompt** — 把 `prompts/create-routing-card.md` 复制到你常用的 LLM，粘贴你的任务。快速得到第一版 routing card。
+**直接复制给 ChatGPT**
+把 `prompts/create-routing-card.md` 的内容贴到聊天框里，再把你的任务一起扔进去。AI 会帮你生成一张"分级卡"。
 
-**用模板** — 自己填写 `templates/ai-work-routing-card.md`。适合想亲自梳理 oracle 强度、歧义度、失败成本的情况。
+**自己填模板**
+打开 `templates/ai-work-routing-card.md` 自己填。适合那种你自己想掂量一下的活：这步要搞多严、任务糊不糊、错了亏不亏。
 
-**请人出卡** — 把任务或工作流发给熟悉这套框架的人，让他们生成一张完整的 AI Work Routing Card。适合高成本、高歧义、agentic 或模型迁移类任务。
+**找人帮你出**
+把任务发给懂这套的人，让他帮你做一张卡。适合那种成本高、说不清楚、步骤多、或者要换模型的活。
 
-## 示例
+## 举个例子
 
-任务：按照明确的计划修改一个小函数，并运行测试。
+任务：照着写好的步骤，改一小段代码，然后跑测试。
 
-| 阶段 | 策略 |
+| 步骤 | 怎么处理 |
 |---|---|
-| Plan | 已有计划 — 跳过 |
-| Execute | 更便宜的可编程模型 |
-| Verify | 运行测试 / typecheck |
-| Repair | 一次廉价重试 |
-| Escalate | 若测试两次失败或根因不明，升级到强推理模型 |
+| 想好怎么改 | 计划已经有了，跳过 |
+| 动手写代码 | 用便宜点的模型 |
+| 检查对不对 | 跑测试 / 查类型 |
+| 修 bug | 最多用便宜模型重试一次 |
+| 彻底卡住 | 试两次还错，就换最强的模型 |
 
-## 工作流阶段
+## 整体的几个环节
 
-Intake → Planning → Search → Execute → Verify → Repair → Package
+接活 → 理思路 → 查资料 → 动手 → 检查 → 修 → 交差
 
-## 更多示例
+## 更多例子
 
 `examples/coding-agent-plan-edit.md` · `examples/batch-json-extraction.md` · `examples/model-migration-decision.md`
 
-## Roadmap
+## 后面可能整点啥
 
-未来可能探索：交互式卡片生成、本地 CLI、BYOK 应用。仅在有真实用户信号后才会推进。
+也许会做：网页点一点生成分级卡、命令行小工具、支持你自己填 API key。
+等真有人用了再说。
