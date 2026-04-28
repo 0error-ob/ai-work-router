@@ -1,39 +1,39 @@
-# Routing Principles
+# 路由原则
 
-## Route workflows, not prompts
+## 路由工作流，而不是路由 prompt
 
-Planning, search, execution, verification, repair, and packaging may each require different model classes or tools.
+规划、搜索、执行、验证、修复、打包——每个阶段可能需要不同的模型类或工具。
 
-## Spend strong reasoning where direction matters
+## 在方向判断上使用强推理
 
-- requirements are ambiguous
-- task horizon is long
-- oracle is weak
-- failure cost is high
-- planning errors are expensive
+- 需求模糊
+- 任务视野长
+- Oracle 弱
+- 失败成本高
+- 规划错误代价大
 
-## Use cheaper execution when work is bounded
+## 工作边界明确时使用廉价执行
 
-- plan is explicit
-- edit scope is narrow
-- deterministic verification exists
-- failures are reversible
+- 计划已明确
+- 编辑范围窄
+- 存在确定性验证
+- 失败可回滚
 
-## Prefer deterministic verification
+## 优先使用确定性验证
 
-Use tests, typecheck, schema validation, lint, or exact match before LLM judgment.
+有测试、typecheck、schema 校验、lint、精确匹配时，先用这些，再用 LLM 判断。
 
-## Escalate on repeated failure
+## 反复失败时升级
 
-- failures repeat
-- root cause is unclear
-- scope expands
-- failure cost increases
+- 失败重复出现
+- 根因不明
+- 范围扩大
+- 失败成本上升
 
-## Do not route from prompt alone when evidence is missing
+## 证据不足时不要仅靠 prompt 路由
 
-Model migration, high-risk production changes, security-sensitive work, tasks with hidden context — ask for missing evidence instead.
+模型迁移决策、高风险生产变更、安全敏感工作、有隐藏上下文的任务——先要求补充证据。
 
-## Model names are implementation details
+## 模型名是实现细节
 
-Use model classes: strong reasoning · cheap-fast · coding-capable · long-context · structured-output-stable · deterministic tool · human review
+使用模型类：强推理 · 廉价快速 · 可编程 · 长上下文 · 结构化输出稳定型 · 确定性工具 · 人工审核

@@ -1,36 +1,36 @@
-# Create an AI Work Routing Card
+# 生成 AI Work Routing Card
 
-Analyze the task structure and produce a workflow routing policy. Do not recommend a single best model.
+分析任务结构，生成工作流路由策略。不要推荐单一最佳模型。
 
-## Task
-
-```text
-[PASTE TASK HERE]
-```
-
-## Optional context
+## 任务
 
 ```text
-- Cost sensitivity:
-- Failure cost:
-- Verification available:
-- Tools available:
-- Context size:
+[在此粘贴任务描述]
 ```
 
-## Output
+## 可选上下文
 
-Produce a completed AI Work Routing Card:
+```text
+- 成本敏感度：
+- 失败成本：
+- 可用验证方式：
+- 可用工具：
+- 上下文大小：
+```
 
-1. Task
-2. Task type
-3. Task-structure profile (oracle strength, horizon, ambiguity, context dependency, output constraint, failure cost, reversibility)
-4. Workflow decomposition (intake → plan → search → execute → verify → repair → package)
-5. Routing policy by phase
-6. Escalation triggers
-7. Do-not-automate conditions
-8. Rationale
+## 输出要求
 
-Use model classes, not model names: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review.
+生成一张完整的 AI Work Routing Card，包含以下部分：
 
-Prefer deterministic verification over LLM judgment. If evidence is insufficient, say what's missing. Be specific about escalation triggers and stop conditions.
+1. 任务
+2. 任务类型
+3. 任务结构画像（oracle 强度、视野长度、歧义程度、上下文依赖、输出约束、失败成本、可回滚性）
+4. 工作流拆解（intake → plan → search → execute → verify → repair → package）
+5. 各阶段路由策略
+6. 升级触发条件
+7. 不可自动化条件
+8. 说明
+
+使用模型类，不要使用具体模型名：强推理 · 廉价执行 · 可编程模型 · 长上下文 · 结构化输出稳定型 · 确定性验证器 · 人工审核。
+
+优先使用确定性验证，而非让 LLM 判断。如果证据不足，说明缺少什么。升级条件和停止条件要具体。
