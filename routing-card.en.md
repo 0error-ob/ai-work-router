@@ -1,3 +1,4 @@
+```
 Analyze an AI work task and produce an executable workflow routing strategy.
 
 Your goal is not to recommend a "single best model." Instead, determine:
@@ -184,3 +185,4 @@ Focus on:
 - Why cheaper execution is safe for certain phases
 - How verification reduces risk
 - When automation should not continue
+```
