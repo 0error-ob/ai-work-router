@@ -140,12 +140,9 @@ Different phases of the same task — planning, execution, verification, repair 
 
 ## More examples
 
-[examples/japan-trip-7days.en.md](examples/japan-trip-7days.en.md) — 7-day Japan trip on a budget
-
-[examples/fitness-diet-cut.en.md](examples/fitness-diet-cut.en.md) — fitness and diet plan for fat loss
-
-[examples/chinese-learning-3months.en.md](examples/chinese-learning-3months.en.md) — three-month Chinese learning plan (zero to speaking)
-
-[examples/industry-report-stablecoin-eth.en.md](examples/industry-report-stablecoin-eth.en.md) — industry analysis report: stablecoin on Ethereum
+- [7-day Japan trip on a budget](examples/japan-trip-7days.en.md)
+- [Fitness and diet plan for fat loss](examples/fitness-diet-cut.en.md)
+- [Three-month Chinese learning plan (zero to speaking)](examples/chinese-learning-3months.en.md)
+- [Industry analysis report: stablecoin on Ethereum](examples/industry-report-stablecoin-eth.en.md)
 
 Each example shows three LLM outputs side by side, collapsed by default.
