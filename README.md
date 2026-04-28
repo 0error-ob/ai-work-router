@@ -32,15 +32,19 @@
 
 </details>
 
-**自己填模板**
-展开下方，复制空白模板，自己填。
+**让 AI 帮你填模板**
+展开下方，复制 prompt，发给 AI，让它按模板格式帮你分析。输出是填好的结构化表格，方便你逐项核查。
 
 <details>
-<summary>展开模板</summary>
+<summary>展开 prompt（AI 按模板格式填写）</summary>
 
-**任务**
+帮我填写这张 AI Work Routing Card。根据我的任务，逐项分析并填入对应字段。
 
-[一两句话描述]
+**我的任务：**
+
+[在此描述任务]
+
+---
 
 **任务类型**
 
@@ -50,13 +54,13 @@
 
 | 维度 | 取值 | 备注 |
 |---|---|---|
-| Oracle 强度 | Strong / Medium / Weak / None | 如何判断成功？ |
-| 视野长度 | 单步 / 短多步 / 长链 / 开放式 | |
-| 歧义程度 | Low / Medium / High | |
-| 上下文依赖 | Low / Medium / High | |
-| 输出约束 | 自由文本 / JSON / 代码 / Patch / 命令 / 决策建议 / 其他 | |
-| 失败成本 | Low / Medium / High | |
-| 可回滚性 | Easy / Moderate / Hard / Unknown | |
+| Oracle 强度 | | |
+| 视野长度 | | |
+| 歧义程度 | | |
+| 上下文依赖 | | |
+| 输出约束 | | |
+| 失败成本 | | |
+| 可回滚性 | | |
 
 **路由策略**
 
@@ -72,11 +76,7 @@
 
 **升级触发条件**
 
-[列出具体条件]
-
 **不可自动化条件**
-
-[列出必须人工介入的情况]
 
 </details>
 
@@ -98,7 +98,7 @@
 - 可用的验证方式：
 - 当前工作流：
 
-框架参考：https://github.com/[你的用户名]/ai-work-router
+框架参考：https://github.com/0error-ob/ai-work-router
 
 </details>
 

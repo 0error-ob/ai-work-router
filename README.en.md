@@ -31,14 +31,18 @@ Use model classes, not model names: strong reasoning · cheaper execution · cod
 
 </details>
 
-**Use the template** — expand below, copy the blank card, fill it in yourself.
+**Let AI fill the template** — expand below, copy the prompt, send to your LLM. Output is a filled structured card you can review field by field.
 
 <details>
-<summary>Expand template</summary>
+<summary>Expand prompt (AI fills template format)</summary>
 
-**Task**
+Fill in this AI Work Routing Card for me. Analyze my task and complete each field.
 
-[One or two sentences]
+**My task:**
+
+[Describe the task here]
+
+---
 
 **Task type**
 
@@ -48,13 +52,13 @@ Answer / Rewrite / Extract / Classify / Generate / Reason / Code / Agentic / Res
 
 | Dimension | Value | Notes |
 |---|---|---|
-| Oracle strength | Strong / Medium / Weak / None | How will success be checked? |
-| Horizon | Single-step / Short / Long / Open-ended | |
-| Ambiguity load | Low / Medium / High | |
-| Context dependency | Low / Medium / High | |
-| Output constraint | Freeform / JSON / Code / Patch / Commands / Recommendation / Other | |
-| Failure cost | Low / Medium / High | |
-| Reversibility | Easy / Moderate / Hard / Unknown | |
+| Oracle strength | | |
+| Horizon | | |
+| Ambiguity load | | |
+| Context dependency | | |
+| Output constraint | | |
+| Failure cost | | |
+| Reversibility | | |
 
 **Routing policy**
 
@@ -70,11 +74,7 @@ Model classes: strong reasoning · cheaper execution · coding-capable · long-c
 
 **Escalation triggers**
 
-[List concrete conditions]
-
 **Do-not-automate conditions**
-
-[List cases requiring human input]
 
 </details>
 
@@ -95,7 +95,7 @@ I have a task and need an AI Work Routing Card — help me figure out how to spl
 - Verification available:
 - Current workflow:
 
-Framework reference: https://github.com/[your-username]/ai-work-router
+Framework reference: https://github.com/0error-ob/ai-work-router
 
 </details>
 
