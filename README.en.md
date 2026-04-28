@@ -12,6 +12,7 @@ Copy the prompt below, paste into your LLM, and add your task.
 
 ---
 
+```
 Analyze an AI work task and produce an AI work routing recommendation that a regular user can follow step by step.
 
 Your goal is not to recommend a "single best model." Instead, tell the user:
@@ -125,6 +126,7 @@ State what the final output should be so the user can use it directly.
 
 Unless the task is genuinely complex, keep the total output between 700–1000 characters.
 Each step's "Why" should be at most one sentence.
+```
 
 ---
 
