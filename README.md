@@ -12,8 +12,8 @@
 
 ## 怎么用
 
-**直接复制给 ChatGPT**
-展开下方，复制 prompt，贴到聊天框，再把你的任务填进去。
+**直接丢给 LLM**
+展开下方，复制 prompt，贴到对话框，再把你的任务填进去。
 
 <details>
 <summary>展开 prompt</summary>
