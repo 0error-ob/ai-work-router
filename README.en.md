@@ -6,11 +6,9 @@ Where is intelligence actually needed in this workflow?
 
 Route by workflow phase — not by prompt. Decide where to use strong reasoning, where cheaper execution is safe, what verifier to use, and when to stop.
 
-Markdown-only: a prompt, a template, and worked examples.
+Markdown-only: a prompt and worked examples.
 
 ## How to use it
-
-Pick whichever fits:
 
 **Use the prompt** — expand below, copy the prompt, paste into your preferred LLM, then add your task.
 
@@ -28,53 +26,6 @@ Analyze the task structure and produce a workflow routing policy. Do not recomme
 **Output:** Produce a complete AI Work Routing Card covering task · task type · task-structure profile (oracle strength, horizon, ambiguity, context dependency, output constraint, failure cost, reversibility) · workflow decomposition (intake → plan → search → execute → verify → repair → package) · routing policy by phase · escalation triggers · do-not-automate conditions · rationale
 
 Use model classes, not model names: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Prefer deterministic verification. Be specific about escalation triggers and stop conditions.
-
-</details>
-
-**Let AI fill the template** — expand below, copy the prompt, send to your LLM. Output is a filled structured card you can review field by field.
-
-<details>
-<summary>Expand prompt (AI fills template format)</summary>
-
-Fill in this AI Work Routing Card for me. Analyze my task and complete each field.
-
-**My task:**
-
-[Describe the task here]
-
----
-
-**Task type**
-
-Answer / Rewrite / Extract / Classify / Generate / Reason / Code / Agentic / Research / Data analysis / Other
-
-**Task-structure profile**
-
-| Dimension | Value | Notes |
-|---|---|---|
-| Oracle strength | | |
-| Horizon | | |
-| Ambiguity load | | |
-| Context dependency | | |
-| Output constraint | | |
-| Failure cost | | |
-| Reversibility | | |
-
-**Routing policy**
-
-| Phase | Model class / tool |
-|---|---|
-| Plan | |
-| Execute | |
-| Verify | |
-| Repair | |
-| Finalize | |
-
-Model classes: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review
-
-**Escalation triggers**
-
-**Do-not-automate conditions**
 
 </details>
 
