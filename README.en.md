@@ -31,9 +31,73 @@ Use model classes, not model names: strong reasoning · cheaper execution · cod
 
 </details>
 
-**Use the template** — fill out `templates/ai-work-routing-card.md` yourself. Good when you want to think through oracle strength, ambiguity, and failure cost directly.
+**Use the template** — expand below, copy the blank card, fill it in yourself.
 
-**Ask for a card** — send a task or workflow to someone familiar with the framework. Good for high-cost, ambiguous, or model-migration tasks.
+<details>
+<summary>Expand template</summary>
+
+**Task**
+
+[One or two sentences]
+
+**Task type**
+
+Answer / Rewrite / Extract / Classify / Generate / Reason / Code / Agentic / Research / Data analysis / Other
+
+**Task-structure profile**
+
+| Dimension | Value | Notes |
+|---|---|---|
+| Oracle strength | Strong / Medium / Weak / None | How will success be checked? |
+| Horizon | Single-step / Short / Long / Open-ended | |
+| Ambiguity load | Low / Medium / High | |
+| Context dependency | Low / Medium / High | |
+| Output constraint | Freeform / JSON / Code / Patch / Commands / Recommendation / Other | |
+| Failure cost | Low / Medium / High | |
+| Reversibility | Easy / Moderate / Hard / Unknown | |
+
+**Routing policy**
+
+| Phase | Model class / tool |
+|---|---|
+| Plan | |
+| Execute | |
+| Verify | |
+| Repair | |
+| Finalize | |
+
+Model classes: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review
+
+**Escalation triggers**
+
+[List concrete conditions]
+
+**Do-not-automate conditions**
+
+[List cases requiring human input]
+
+</details>
+
+**Ask for a card** — expand below, copy the request, send it to someone familiar with the framework.
+
+<details>
+<summary>Expand request template</summary>
+
+I have a task and need an AI Work Routing Card — help me figure out how to split it across model classes and workflow phases.
+
+**Task:**
+
+[Describe the task here]
+
+**Context:**
+- Cost constraints:
+- Failure consequences:
+- Verification available:
+- Current workflow:
+
+Framework reference: https://github.com/[your-username]/ai-work-router
+
+</details>
 
 ## Example
 
