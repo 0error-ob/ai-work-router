@@ -132,21 +132,11 @@ Each step's "Why" should be at most one sentence.
 
 Want the engineer version (full 9 sections, terminology, Agent Instruction)? → [AI Work Routing Card](routing-card.en.md)
 
-## Example
+## How it works
 
-Task: modify a small function according to an explicit plan and run tests.
+Different phases of the same task — planning, execution, verification, repair — need different capabilities. Use strong reasoning where direction is unclear or failure is costly. Use cheaper execution where the plan is explicit and mistakes are reversible. Prefer deterministic checks over LLM judgment wherever possible. Escalate when failures repeat, not before.
 
-| Phase | Policy |
-|---|---|
-| Plan | already provided — skip |
-| Execute | cheaper coding-capable model |
-| Verify | run tests / typecheck |
-| Repair | one cheap retry |
-| Escalate | use stronger reasoning if tests fail twice or root cause is unclear |
-
-## Phases
-
-Intake → Planning → Search → Execute → Verify → Repair → Package
+→ [Routing principles](principles/routing-principles.en.md)
 
 ## More examples
 
