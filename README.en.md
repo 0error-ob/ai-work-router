@@ -12,43 +12,101 @@ Copy the prompt below, paste into your LLM, and add your task.
 
 ---
 
-Analyze an AI work task and produce an executable workflow routing strategy.
+Analyze an AI work task and produce an AI work routing recommendation that a regular user can follow.
 
 Your goal is not to recommend a "single best model." Instead, judge:
 
-- Which phases warrant strong reasoning
-- Which phases can use cheaper execution
-- Which phases should prioritize deterministic verifiers
-- When to escalate, stop, or require human review
-- Whether this task is suitable for automation
+- Which steps deserve a strong model thinking carefully
+- Which steps can be handed to a cheap/fast model
+- Which steps should use tools, tests, tables, or rules to check
+- When to escalate to a stronger model
+- When automation should stop and let a human decide
 
-**Task:**
+## Task
 
 [Paste task description here]
 
-**Optional context:** Cost sensitivity / Failure cost / Verification available / Tools available / Context size / Involves code or data
+## Optional context
 
-**First, complete this analysis internally (do not output):**
+- Cost sensitivity:
+- Failure cost:
+- Verification available:
+- Tools available:
+- Context size:
+- Involves code / data / files / external pages:
+- Current pain points:
 
-- Task-structure profile: oracle strength / horizon / ambiguity / context dependency / output constraint / failure cost / reversibility / cost sensitivity
-- Workflow decomposition: intake / plan / search / execute / verify / repair / package — for each phase, its goal, recommended routing, reasoning level
-- Escalation triggers and stop / do-not-automate conditions
+## Internal analysis (do this silently)
 
-**Then output only the Quick Routing block:**
+Complete the following analysis internally — do not output it as a list of jargon:
 
-- Intake: [model class] · [reasoning level] · [one-line action]
-- Plan: ...
-- Search / Context: ...
-- Execute: ...
-- Verify: ...
-- Repair: ...
-- Package: ...
+- Task structure: verification difficulty, task length, ambiguity, context dependency, output constraint, failure cost, reversibility, cost sensitivity
+- Workflow decomposition: understand task → plan → search/gather → execute → check → fix → deliver
+- Which steps need strong reasoning, which can use cheap execution, which need deterministic checks
+- Escalation triggers and stop conditions
 
-Keep each line terse. Model classes: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Do not use specific model names. When a deterministic verifier is available, do not default to LLM judgment. When a task can be split into plan / execute / verify, do not hand it to a single model.
+## Output requirements
+
+Output only a concise **AI Work Routing**.
+
+Do not output the full analysis report.
+Do not pile up jargon.
+Do not use specific model names.
+Do not say "best model."
+Each step must tell the user: what to do next, what kind of model/tool to use, why.
+
+## Output format
+
+# AI Work Routing
+
+## One-line strategy
+
+State in one sentence how this task should split AI work.
+
+## Recommended steps
+
+Output by step. Each step uses this format:
+
+### 1. [Step name]
+
+**What to do:**
+One sentence describing what this stage accomplishes.
+
+**What to use:**
+Choose one or more from below, explained in natural language:
+
+- A strong model planning carefully
+- A cheap/fast model executing
+- A long-context model reading large material
+- A structured-output model organizing into a table / JSON / checklist
+- A tool / test / rule check
+- Human judgment
+
+**Why:**
+One sentence on why this allocation makes sense.
+
+## Check points
+
+List the 3–5 most important things to check for this task.
+Prefer tools, tables, tests, rules, or calculation over asking another LLM to judge by feel.
+
+## When to escalate
+
+List specific escalation conditions.
+Examples: conflicting information, two consecutive failures, budget exceeded, tests failing, requirements becoming unclear, risk increasing.
+
+## When to stop automation
+
+List cases requiring human judgment.
+Examples: high-risk decisions, real payments, legal / visa / medical / financial risk, information that cannot be verified, unclear user preferences.
+
+## Final deliverable
+
+State what form the final output should take so the user can use it directly.
 
 ---
 
-For a full task-structure analysis (9 sections with escalation triggers and Agent Instruction) → [AI Work Routing Card](routing-card.en.md)
+Want the engineer version (full 9 sections, terminology, Agent Instruction)? → [AI Work Routing Card](routing-card.en.md)
 
 ## Example
 
