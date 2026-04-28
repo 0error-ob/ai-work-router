@@ -148,4 +148,12 @@
 
 ## 更多例子
 
-[examples/japan-trip-7days.md](examples/japan-trip-7days.md) — 7 天日本旅行（预算有限），三个 LLM 输出对比
+[examples/japan-trip-7days.md](examples/japan-trip-7days.md) — 7 天日本旅行（预算有限）
+
+[examples/fitness-diet-cut.md](examples/fitness-diet-cut.md) — 健身+饮食计划（目标减脂）
+
+[examples/english-learning-3months.md](examples/english-learning-3months.md) — 规划三个月的英文学习路径
+
+[examples/industry-report-stablecoin-eth.md](examples/industry-report-stablecoin-eth.md) — 行业分析报告（稳定币 + 以太网络）
+
+每个例子包含三个 LLM 的实际输出，默认折叠，点开对比。

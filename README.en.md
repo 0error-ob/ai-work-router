@@ -150,4 +150,12 @@ Intake → Planning → Search → Execute → Verify → Repair → Package
 
 ## More examples
 
-[examples/japan-trip-7days.md](examples/japan-trip-7days.md) — 7-day Japan trip on a budget, three LLM outputs side by side (Chinese)
+[examples/japan-trip-7days.en.md](examples/japan-trip-7days.en.md) — 7-day Japan trip on a budget
+
+[examples/fitness-diet-cut.en.md](examples/fitness-diet-cut.en.md) — fitness and diet plan for fat loss
+
+[examples/chinese-learning-3months.en.md](examples/chinese-learning-3months.en.md) — three-month Chinese learning plan (zero to speaking)
+
+[examples/industry-report-stablecoin-eth.en.md](examples/industry-report-stablecoin-eth.en.md) — industry analysis report: stablecoin on Ethereum
+
+Each example shows three LLM outputs side by side, collapsed by default.
