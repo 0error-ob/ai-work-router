@@ -10,10 +10,9 @@ Markdown-only: a prompt and worked examples.
 
 ## How to use it
 
-**Use the prompt** — expand below, copy the prompt, paste into your preferred LLM, then add your task.
+Copy the prompt below, paste into your LLM, and add your task.
 
-<details>
-<summary>Expand prompt</summary>
+---
 
 Analyze the task structure and produce a workflow routing policy. Do not recommend a single best model.
 
@@ -27,28 +26,7 @@ Analyze the task structure and produce a workflow routing policy. Do not recomme
 
 Use model classes, not model names: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Prefer deterministic verification. Be specific about escalation triggers and stop conditions.
 
-</details>
-
-**Ask for a card** — expand below, copy the request, send it to someone familiar with the framework.
-
-<details>
-<summary>Expand request template</summary>
-
-I have a task and need an AI Work Routing Card — help me figure out how to split it across model classes and workflow phases.
-
-**Task:**
-
-[Describe the task here]
-
-**Context:**
-- Cost constraints:
-- Failure consequences:
-- Verification available:
-- Current workflow:
-
-Framework reference: https://github.com/0error-ob/ai-work-router
-
-</details>
+---
 
 ## Example
 
