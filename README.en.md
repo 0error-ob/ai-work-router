@@ -6,27 +6,35 @@ Where is intelligence actually needed in this workflow?
 
 Route by workflow phase — not by prompt. Decide where to use strong reasoning, where cheaper execution is safe, what verifier to use, and when to stop.
 
-Markdown-only: a prompt and worked examples.
-
 ## How to use it
 
 Copy the prompt below, paste into your LLM, and add your task.
 
 ---
 
-Analyze the task structure and produce a workflow routing policy. Do not recommend a single best model.
+Analyze this AI work task and give an executable workflow routing recommendation.
 
 **Task:**
 
-[Paste your task here]
+[Paste task description here]
 
 **Optional context:** Cost sensitivity / Failure cost / Verification available / Tools available / Context size
 
-**Output:** Produce a complete AI Work Routing Card covering task · task type · task-structure profile (oracle strength, horizon, ambiguity, context dependency, output constraint, failure cost, reversibility) · workflow decomposition (intake → plan → search → execute → verify → repair → package) · routing policy by phase · escalation triggers · do-not-automate conditions · rationale
+**Output:** Give a routing recommendation in 3–7 lines using this format:
 
-Use model classes, not model names: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Prefer deterministic verification. Be specific about escalation triggers and stop conditions.
+- Intake:
+- Plan:
+- Search / Context:
+- Execute:
+- Verify:
+- Repair:
+- Package:
+
+Each line should state the model class, reasoning level, and what specifically happens. Model classes: strong reasoning · cheaper execution · coding-capable · long-context · structured-output-stable · deterministic verifier · human review. Do not use specific model names. When a deterministic verifier is available, use it before LLM judgment.
 
 ---
+
+For a full task-structure analysis (9 sections with escalation triggers and Agent Instruction) → [AI Work Routing Card](routing-card.en.md)
 
 ## Example
 
