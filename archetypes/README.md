@@ -6,6 +6,8 @@ Use these when the general routing principles aren't specific enough for the tas
 
 ---
 
+## Task Archetypes
+
 | Archetype | Use when |
 |---|---|
 | [Evidence-Gated Verification](evidence-gated-verification.md) | Verifying a built artifact against a spec — requires captured proof, not self-report |
@@ -13,4 +15,11 @@ Use these when the general routing principles aren't specific enough for the tas
 | [Automation Governance](automation-governance.md) | Deciding whether to approve, pilot, or reject an automation request |
 | [Tool Selection](tool-selection.md) | Evaluating and recommending a tool or platform with evidence-based scoring |
 | [Codebase Context Reconstruction](codebase-context-reconstruction.md) | Building an accurate mental model of an unfamiliar codebase |
-| [High-Risk Stop Conditions](high-risk-stop-conditions.md) | **Cross-cutting guardrail** — not a task archetype; inject into any routing decision involving regulated domains or irreversible actions |
+
+## Cross-Cutting Guardrails
+
+Apply these regardless of which archetype or routing card is in use.
+
+| Guardrail | When to apply |
+|---|---|
+| [High-Risk Stop Conditions](high-risk-stop-conditions.md) | Any task involving regulated domains, irreversible actions, or weak verification — check before proceeding |

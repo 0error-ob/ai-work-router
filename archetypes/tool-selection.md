@@ -21,6 +21,7 @@ The core failure this archetype prevents: selecting tools based on demos, hype, 
 3. **Vendor risk assessment** — stability, roadmap alignment, exit clause terms
 4. **Recommendation** — top-ranked tool with key differentiators and rationale
 5. **Pilot plan** — how to validate before full commitment
+6. **Source log** — for every pricing, security, and feature claim: URL, access date, and which specific judgment it supports. An evaluation without a source log is not auditable.
 
 Evaluation criteria weights (adjust per context):
 
@@ -41,6 +42,7 @@ The evaluation is valid when:
 - TCO includes hidden costs (migration, training, change management)
 - Vendor claims are validated through independent testing or user references
 - A pilot has been defined before full commitment
+- Source log exists: every price figure, security certification, and feature claim traces to a URL with an access date
 
 ## When to escalate
 
