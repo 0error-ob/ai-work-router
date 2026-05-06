@@ -12,6 +12,7 @@ The core failure this archetype prevents: selecting tools based on demos, hype, 
 - Candidate tools (2–5 options)
 - Budget parameters and timeline
 - Existing stack constraints (what it must integrate with)
+- **Live sources (required)**: vendor pricing pages, official security/compliance docs, changelog, and release notes — fetched at evaluation time, not recalled from model memory. Tool pricing, features, and certifications change; model knowledge is stale.
 
 ## Deliverables
 

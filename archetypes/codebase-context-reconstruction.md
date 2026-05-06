@@ -54,6 +54,12 @@ The output is valid when:
 - Never infer intent, quality, or future plans from code structure
 - If a file was not inspected, do not make claims about it
 
+## Scope boundary
+
+This archetype is **read-only**. Its only output is understanding.
+
+When the task shifts from understanding to modifying — writing a patch, fixing a bug, adding a feature — exit this archetype and switch to a coding or verification workflow. Do not blend the two: context reconstruction that slides into code editing loses the discipline that makes both reliable.
+
 ## Routing
 
 | Phase | Use |

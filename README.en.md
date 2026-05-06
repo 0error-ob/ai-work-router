@@ -150,6 +150,8 @@ Each step's "Why" should be at most one sentence.
 
 Want the engineer version (full 9 sections, terminology, Agent Instruction)? → [AI Work Routing Card](routing-card.en.md)
 
+If the task clearly matches a recurring pattern, use the corresponding archetype instead of the full routing card. → [Task Archetypes (optional)](archetypes/README.md)
+
 ## How it works
 
 Different phases of the same task — planning, execution, verification, repair — need different capabilities. Use strong reasoning where direction is unclear or failure is costly. Use cheaper execution where the plan is explicit and mistakes are reversible. Prefer deterministic checks over LLM judgment wherever possible. Escalate when failures repeat, not before.
