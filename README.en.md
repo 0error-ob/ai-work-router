@@ -2,6 +2,24 @@
 
 # AI Work Router
 
+An AI system is a composition of task structure, model capability, tool verification, human judgment, and cost constraint.
+
+The shift: from model worship to task structure.
+
+---
+
+Most people think:
+
+> Which model is strongest? Which agent is best? Which benchmark scores highest? Which prompt is magic?
+
+Task-structure thinking asks:
+
+> Can this step be verified? Where does this need strong reasoning? Where is batch execution enough? Which step should use a tool check? Can failures be rolled back? When must automation stop?
+
+**Related frameworks:** Task structure analysis → [task-ontology](https://github.com/0error-ob/task-ontology) · Model architecture analysis → model-ontology · Work routing decisions → here
+
+---
+
 Where is intelligence actually needed in this workflow?
 
 Route by workflow phase — not by prompt. Decide where to use strong reasoning, where cheaper execution is safe, what verifier to use, and when to stop.
