@@ -15,6 +15,7 @@ Use these when the general routing principles aren't specific enough for the tas
 | [Automation Governance](automation-governance.md) | Deciding whether to approve, pilot, or reject an automation request |
 | [Tool Selection](tool-selection.md) | Evaluating and recommending a tool or platform with evidence-based scoring |
 | [Codebase Context Reconstruction](codebase-context-reconstruction.md) | Building an accurate mental model of an unfamiliar codebase |
+| [Failure-Class Routing](failure-class-routing.md) | Choosing the next action after a failed run by classifying the failure first |
 
 ## Cross-Cutting Guardrails
 
