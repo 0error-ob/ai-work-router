@@ -16,6 +16,7 @@ Use these when the general routing principles aren't specific enough for the tas
 | [Tool Selection](tool-selection.md) | Evaluating and recommending a tool or platform with evidence-based scoring |
 | [Codebase Context Reconstruction](codebase-context-reconstruction.md) | Building an accurate mental model of an unfamiliar codebase |
 | [Failure-Class Routing](failure-class-routing.md) | Choosing the next action after a failed run by classifying the failure first |
+| [Knowledge-Routed Scaffold](knowledge-routed-scaffold.md) | Assembling a small task-specific workflow from a larger library of lessons and playbooks |
 
 ## Cross-Cutting Guardrails
 
