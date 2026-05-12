@@ -150,6 +150,8 @@ AI 系统是"任务结构 + 模型能力 + 工具验证 + 人类判断 + 成本�
 
 想要专业版（完整 9 节、术语、Agent 指令）？→ [AI 工作路由卡片](routing-card.md)
 
+要给 agent 或 harness 提供可被消费的路由计划？→ [Schemas](schemas/README.md)
+
 如果任务明显符合某个高频模式，优先用对应 archetype，不用走完整流程。→ [任务 Archetypes（可选）](archetypes/README.md)
 
 ## 工作原理

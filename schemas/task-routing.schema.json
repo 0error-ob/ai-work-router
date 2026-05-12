@@ -1,0 +1,60 @@
+{
+  "schema_version": "0",
+  "description": "Machine-consumable form of the routing schema. Companion to task-routing.schema.yaml (which is the documented human-readable form). Keep both in sync.",
+  "task_id": null,
+  "task_profile": {
+    "oracle_strength": null,
+    "horizon": null,
+    "ambiguity_load": null,
+    "context_dependency": null,
+    "failure_cost": null,
+    "reversibility": null
+  },
+  "phases": [
+    {
+      "name": "probe",
+      "role": "strong_reasoning",
+      "output_kind": "acceptance_criteria",
+      "ledger_writes": ["goal", "constraints", "verifier_cmd"],
+      "stop_when": "ledger_complete",
+      "escalate_when": [
+        "Required context cannot be located",
+        "Acceptance criteria are not extractable from the task description"
+      ]
+    },
+    {
+      "name": "execute",
+      "role": "incremental_action",
+      "output_kind": "state_change",
+      "ledger_writes": ["actions", "observations"],
+      "stop_when": "target_state_plausible",
+      "escalate_when": [
+        "Same action repeated more than 3 times without progress",
+        "Reaching a tool boundary not declared in the task profile"
+      ]
+    },
+    {
+      "name": "verify",
+      "role": "tool_validation",
+      "output_kind": "verifier_evidence",
+      "requires": ["verifier_cmd_exists"],
+      "ledger_writes": ["verifier_evidence"],
+      "escalate_when": [
+        "Verifier crashes or returns unparseable output",
+        "Verifier passes but observed behavior contradicts goal"
+      ]
+    },
+    {
+      "name": "stop",
+      "role": "gate",
+      "requires": ["verifier_evidence.passed == true"],
+      "ledger_writes": ["stop_condition"]
+    }
+  ],
+  "global_stop": [
+    "Action would be irreversible and verifier is weak or absent",
+    "Required context for the next phase is missing",
+    "Phase escalation triggered more than N times without resolution"
+  ],
+  "agent_instruction": "Work in phases. Probe first: list acceptance criteria into the ledger, including a verifier command. Then execute incrementally, writing each action and its observation. Run the verifier before claiming success. Only stop when the verifier exits with success and the ledger reflects every acceptance criterion. Escalate if the verifier crashes, if the same action repeats without progress, or if a tool boundary not in the task profile is reached."
+}

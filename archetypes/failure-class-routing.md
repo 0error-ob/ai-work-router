@@ -37,6 +37,23 @@ Validation: <how to know the retry worked>
 | `harness_packaging` | Fix build path, executable name, archive layout, environment, or command invocation | Do not edit task logic before the harness is known-good |
 | `implementation_mismatch` | Compare expected vs actual behavior; patch the smallest confirmed mismatch | Do not rewrite broad areas without a concrete diff |
 | `oracle_or_claim_boundary` | Re-label the run type and evidence surface before reporting | Do not publish as a stronger result than the evidence supports |
+| `spec_non_discriminable` | Switch route: wrapper / reference-source / test-informed / skip; do not retry as cleanroom | Do not continue probing — under the current evidence surface, output diffs cannot narrow the hypothesis set |
+
+## Spec Identifiability Sub-classification
+
+When classifying `implementation_mismatch` or `spec_non_discriminable` failures in spec-discovery tasks (cleanroom benchmarks, tool reimplementation), sub-classify the failure's identifiability before choosing a repair route:
+
+| Identifiability | Definition | Route |
+|---|---|---|
+| High | Output diff directly points to a missing rule | Standard probe → repair cycle |
+| Low but discriminable | Discriminating probes can narrow the hypothesis set to a small size | Targeted probe search; build hypothesis ledger |
+| Non-discriminable | Hypothesis space exceeds probe information content under the current evidence surface | Switch to higher-evidence route (wrapper, reference-source); stop cleanroom repair |
+
+All tiers are relative to the allowed evidence surface. Non-discriminable at behavior-visible evidence may be fully recoverable at source-visible evidence — that is a different claim type.
+
+Non-discriminable failures often involve **implementation-contingent oracle artifacts**: internal constant orderings, traversal orders, or historical implementation choices that have no semantic necessity and are not derivable from behavioral observation. Cleanroom failure on such tasks is a task structure property, not a model capability signal.
+
+---
 
 ## Verifier
 

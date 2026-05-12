@@ -1,0 +1,168 @@
+# Task Routing Schema v0
+#
+# Machine-readable counterpart to routing-card.md. The card is for a human
+# producing a routing plan. The schema is for an agent or harness consuming
+# one.
+#
+# Field names align with task-ontology primitives where possible.
+# See: https://github.com/0error-ob/task-ontology/blob/main/PRIMITIVES.md
+#
+# This file is the schema itself, expressed as a self-documenting example.
+# Programs that need to validate against it can convert this to JSON Schema
+# or treat the field set below as canonical.
+
+schema_version: "0"
+
+# ---------------------------------------------------------------------------
+# Required top-level fields
+# ---------------------------------------------------------------------------
+
+task_id:
+  description: |
+    Stable identifier for the task this routing plan applies to. May be a
+    benchmark task ID, a ticket number, or a workflow name.
+  type: string
+  required: true
+
+task_profile:
+  description: |
+    Coarse characterization of the task. Drives phase-role decisions.
+    Field set is a subset of task-ontology DIMENSIONS.
+  type: object
+  fields:
+    oracle_strength:
+      enum: [strong, medium, weak, none]
+    horizon:
+      enum: [single_step, short_multi_step, long_horizon, open_ended]
+    ambiguity_load:
+      enum: [low, medium, high]
+    context_dependency:
+      enum: [low, medium, high]
+    failure_cost:
+      enum: [low, medium, high]
+    reversibility:
+      enum: [easy, moderate, hard, unknown]
+
+# ---------------------------------------------------------------------------
+# Phases — the load-bearing field
+# ---------------------------------------------------------------------------
+
+phases:
+  description: |
+    Ordered list of phases. Each phase declares what kind of resource it
+    uses (role), what it must produce (output_kind), what it writes to the
+    ledger, and what condition triggers the next phase.
+
+    The phases here are illustrative — probe/execute/verify/stop is one
+    common loop. A routing plan may use different phase names.
+  type: array
+  required: true
+  items:
+    - name: probe
+      role: strong_reasoning
+      output_kind: acceptance_criteria
+      ledger_writes:
+        - goal
+        - constraints
+        - verifier_cmd
+      stop_when: ledger_complete
+      escalate_when:
+        - "Required context cannot be located"
+        - "Acceptance criteria are not extractable from the task description"
+
+    - name: execute
+      role: incremental_action
+      output_kind: state_change
+      ledger_writes:
+        - actions
+        - observations
+      stop_when: target_state_plausible
+      escalate_when:
+        - "Same action repeated more than 3 times without progress"
+        - "Reaching a tool boundary not declared in the task profile"
+
+    - name: verify
+      role: tool_validation
+      output_kind: verifier_evidence
+      requires:
+        - verifier_cmd_exists
+      ledger_writes:
+        - verifier_evidence
+      escalate_when:
+        - "Verifier crashes or returns unparseable output"
+        - "Verifier passes but observed behavior contradicts goal"
+
+    - name: stop
+      role: gate
+      requires:
+        - "verifier_evidence.passed == true"
+      ledger_writes:
+        - stop_condition
+
+# Field reference for the items above:
+#
+# name: short identifier for the phase. Should match the ledger's phase
+#   record name.
+#
+# role: which kind of resource this phase uses. Avoid specific model names.
+#   Allowed values:
+#     - strong_reasoning      Phase needs careful reading or planning.
+#     - incremental_action    Phase advances the state with bounded steps.
+#     - tool_validation       Phase relies on a deterministic check, not on
+#                             model judgment.
+#     - gate                  Phase consults explicit conditions to allow or
+#                             block continuation.
+#     - human_review          Phase requires a person.
+#     - cheap_execution       Phase is repetitive and safe to route to a
+#                             cheaper resource.
+#
+# output_kind: what this phase produces. Drives the ledger field that holds
+#   it. Common values:
+#     - acceptance_criteria
+#     - state_change
+#     - verifier_evidence
+#     - stop_condition
+#
+# ledger_writes: list of ledger field names the phase must populate before
+#   the next phase can start. These names should match fields in the
+#   agent-run-ledger schema.
+#
+# stop_when / requires: phase-exit conditions. stop_when is the success
+#   path; requires is a guard that, if unmet, blocks the phase from running.
+#
+# escalate_when: conditions that should pause execution and surface to a
+#   reviewer (or a more capable resource). Each entry is a short imperative
+#   sentence — no vague conditions.
+
+# ---------------------------------------------------------------------------
+# Global stop conditions
+# ---------------------------------------------------------------------------
+
+global_stop:
+  description: |
+    Conditions that halt execution regardless of which phase is active.
+    These map to the "do not automate" rules in routing-card section 7.
+  type: array
+  items:
+    - "Action would be irreversible and verifier is weak or absent"
+    - "Required context for the next phase is missing"
+    - "Phase escalation triggered more than N times without resolution"
+
+# ---------------------------------------------------------------------------
+# Agent instruction
+# ---------------------------------------------------------------------------
+
+agent_instruction:
+  description: |
+    Compact directive that can be embedded in an agent's system prompt.
+    Up to ~10 lines. The phases block is the authoritative source of
+    behavior; this is the prose form of it for the agent to read.
+  type: string
+  example: |
+    Work in phases. Probe first: list acceptance criteria into the ledger,
+    including a verifier command. Then execute incrementally, writing each
+    action and its observation. Run the verifier before claiming success.
+    Only stop when the verifier exits with success and the ledger reflects
+    every acceptance criterion. Escalate if the verifier crashes, if the
+    same action repeats without progress, or if a tool boundary not in the
+    task profile is reached.
